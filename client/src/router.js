@@ -13,6 +13,7 @@ import Auth from "@/views/Auth";
 import User from "@/views/User";
 import Tasks from "@/views/Tasks";
 import PageNotFound from "@/views/PageNotFound";
+import Connectivity_app from '@/views/Connectivity_app';
 
 Vue.use(Router);
 
@@ -72,6 +73,11 @@ export default new Router({
       path: "/tasks",
       name: "tasks",
       component: Tasks
+    },
+    {
+      path: '/connectivity_app',  // Define the URL path
+      name: 'connectivity_app',   // Give the route a name
+      component: Connectivity_app  // Associate the path with the component
     },
     { path: "*", component: PageNotFound }
   ]

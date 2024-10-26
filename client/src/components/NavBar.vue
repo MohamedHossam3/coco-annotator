@@ -46,6 +46,9 @@
         <li class="nav-item" :class="{ active: $route.name === 'tasks' }">
           <RouterLink class="nav-link" to="/tasks">Tasks</RouterLink>
         </li>
+        <li class="nav-item" :class="{ active: $route.name === 'connectivity_app' }">
+          <RouterLink class="nav-link" to="/connectivity_app">Connectivity App</RouterLink>
+        </li>
         <li
           v-show="$store.getters['user/isAdmin']"
           class="nav-item"
