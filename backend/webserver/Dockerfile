@@ -5,7 +5,8 @@ WORKDIR /workspace/
 # Install python package dependices
 COPY ./backend/ /workspace/
 COPY ./.git /workspace/.git
-RUN python set_path.py
+RUN python set_path.py && \
+    pip install folium==0.11.0
 
 ENV FLASK_ENV=development
 ENV DEBUG=true
