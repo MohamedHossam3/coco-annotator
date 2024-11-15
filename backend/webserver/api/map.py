@@ -9,28 +9,11 @@ api = Namespace('map', description='map related operations')
 @api.route("/")
 class Map(Resource):
 
-    # @login_required
-    # def get(self):
-    #     """Extract map components and return them as JSON for Vue."""
-    #     m = folium.Map(
-    #         width=1024,
-    #         height=600,
-    #     )
-    #     m.get_root().render()
-    #     header = m.get_root().header.render()
-    #     body_html = m.get_root().html.render()
-    #     script = m.get_root().script.render()
-
-    #     return jsonify({
-    #         "header": header,
-    #         "body_html": body_html,
-    #         "script": script
-    #     })
 
     @login_required
     def get(self):
         """Extract map components and return them as JSON for Vue."""
-        m = folium.Map(width=1024, height=600, location=[50.624889, 6.989990], zoom_start=19)
+        m = folium.Map(width=720, height=480, location=[50.624889, 6.989990], zoom_start=19)
 
         url = "https://leafletjs.com/examples/custom-icons/{}".format
         icon_image = url("leaf-red.png")
@@ -60,3 +43,4 @@ class Map(Resource):
             "body_html": body_html,
             "script": script
         })
+
